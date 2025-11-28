@@ -1,0 +1,640 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {font-family: 'Bitcount Grid Single', sans-serif;}
+body{font-family: "Roboto", "Noto Sans", sans-serif;} /* Fonte principal: Roboto */
+
+html{scroll-behavior: smooth;}
+
+/* Inicio Header */
+nav{
+    background-color: #333333d8;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+.nav-list
+{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-right: 28px;
+}
+.nav-list a
+{
+    font-family: "asset", sans-serif;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+}
+
+.nav-list a:hover {color: #ffffffe3;}
+/* Fim Header */
+
+
+/* Inicio Main */
+.main
+{
+    width: 100%;
+    background-color: black;
+    height: calc(100vh - 80px);
+    /* fundo de destaque */
+    background: url("imagens/Fundo.gif") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    position: relative;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000096;
+    z-index: 1;
+}
+
+.main > div {
+    position: relative;
+    z-index: 2; /* coloca o texto acima do overlay */
+}
+
+.main h1
+{
+    font-family: "Allerta Stencil", sans-serif;
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.main p
+{
+    font-variant: small-caps;
+    font-size: 24px;
+    font-style: italic;
+    color: #912323;
+    margin-top: 10px;
+    margin-bottom: 35PX;
+}
+
+.call-to-action
+{
+    cursor: pointer;
+    background-color: #ffffffce;
+    border: 0;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    transform: 0.9s;
+}
+
+.call-to-action:hover{transform: scale(1.1);}
+
+main a
+{
+    
+    text-decoration: none;
+    color: black;
+}
+
+/* Fim Main */
+
+
+
+/* Inicio about */
+
+.about
+{
+    background-color: #f0f8ff;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about div
+{
+    max-width: 50%;
+    padding-right: 40px;
+}
+
+.about img
+{
+    max-width: 450px;
+    border-radius: 8px;
+}
+
+
+
+.about h2
+{
+    font-family: "Cinzel", serif;
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+/* Fim about */
+
+
+
+/* Inicio projects */
+
+.projects
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+.projects h2
+{
+    font-family: "Silkscreen", sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.projects p
+{
+    
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.projects-list
+{
+    width: 100%;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-list
+{
+    width: 100%;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.projects img
+{
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    opacity: 1;
+    transition: opacity 0.45s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.projects img:hover{
+    transform: scale(1.03);
+}
+
+.action
+{
+    font-family: "Allerta Stencil", sans-serif;
+    background-color: #790E18;
+    border: 0;
+    padding: 20px 37px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #ffffff;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.9%;
+}
+
+.action:hover{transform: scale(1.3)}
+
+/* Footer */
+footer
+{
+    width: 100%;
+    background: linear-gradient(90deg, #000000 20%, #5e0c0c 95%);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 -2px 10px #000000;
+}
+
+footer h3{margin-bottom: 10px;}
+
+footer a
+{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover
+{
+    color: #8bb8ff;
+}
+
+footer p
+{
+    color: #FFFFFF;
+    opacity: 0.9;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+
+/* Página do Formulário */
+
+.form-page
+{
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.form-section{padding: 60px 20px;}
+
+.form-container
+{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-title
+{
+    font-family: "Silkscreen", sans-serif;
+    font-size: 36px;
+    color: #982a2a;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-subtitle
+{
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.form-section-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-family: "Cinzel", serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #982a2a;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: "Roboto", sans-serif;
+}
+
+.form-control:focus {
+    border-color: #982a2a;
+    box-shadow: 0 0 0 0.2rem rgba(42, 82, 152, 0.25);
+    outline: none;
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-check-input {
+    width: 18px;
+    height: 18px;
+}
+
+.form-check-label {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+.btn-submit {
+    font-family: "Allerta Stencil", sans-serif;
+    background: linear-gradient(45deg, #960018 40%, #9B111E 70%);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-info {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Página de Agradecimento */
+.thankyou-page {
+    background: linear-gradient(135deg,#000000 20%, #5e0c0c 95%);
+    min-height: 100vh;
+}
+
+.thankyou-section {
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 160px);
+}
+
+.thankyou-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.thankyou-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.thankyou-title {
+    font-family: "Silkscreen", sans-serif;
+    font-size: 32px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.thankyou-message {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.thankyou-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary, .btn-logout {
+    font-family: "Allerta Stencil", sans-serif;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid;
+}
+
+.btn-secondary {
+    background: white;
+    color: #982a2a;
+    border-color: #982a2a;
+}
+
+.btn-logout {
+    background: #982a2a;
+    color: white;
+    border-color: #982a2a;
+}
+
+.btn-secondary:hover, .btn-logout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000cc;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 10px 30px #00000073;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #98312a;
+}
+
+.modal-title {
+    font-family: "Silkscreen", sans-serif;
+    font-size: 28px;
+    color: #98312a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-description {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-tech {
+    background: #f0f8ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-tech h4 {
+    font-family: "Cinzel", serif;
+    color: #982a2a;
+    margin-bottom: 10px;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-item {
+    background: #982a2a;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container, .thankyou-container {
+        padding: 10px;
+    }
+    
+    .form-title {
+        font-size: 28px;
+    }
+    
+    .form-section-card {
+        padding: 20px;
+    }
+    
+    .thankyou-actions {
+        flex-direction: column;
+    }
+    
+    .btn-secondary, .btn-logout {
+        width: 100%;
+        text-align: center;
+    }
+}

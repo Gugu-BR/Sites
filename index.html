@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- font-family: "Allerta Stencil", sans-serif;        | Cortada                 -->
+      <!-- font-family: "BBH Sans Bartle", sans-serif;        | Meio esticada           -->
+      <!-- font-family: "Bitcount Grid Single", sans-serif;   | Bolinhas                -->
+      <!-- font-family: "Cinzel", serif;                      | Medieval                -->
+      <!-- font-family: "Gloria Hallelujah", cursive;         | Desenhada               -->
+      <!-- font-family: "Monoton", cursive;                   | Varias linhas           -->
+      <!-- font-family: "Permanent Marker", cursive;          | Gordo                   -->
+      <!-- font-family: "Silkscreen", sans-serif;             | Quadrada                -->
+      <!-- font-family: "Tangerine", cursive;                 | Cursiva bonita          -->
+      <!-- font-family: "Yellowtail", cursive;                | Cursiva meio ilegivel   -->
+      <!-- font-family: "Asset", sans-serif;                  | Amassadinha             -->
+      
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Asset&family=BBH+Sans+Bartle&family=Bitcount+Grid+Single:wght@100..900&family=Cinzel:wght@400..900&family=Gloria+Hallelujah&family=Monoton&family=Permanent+Marker&family=Silkscreen:wght@400;700&family=Tangerine:wght@400;700&family=Yellowtail&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css"/>
+
+    <title>Gustavo de Almeida Veronesi</title>
+  </head>
+
+  <body>
+      <!--INICIO HEADER-->
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="formulario.html">Orçamento</a></li>
+        <li><a href="curriculo.html">Currículo</a></li>
+      </ul>
+    </nav>
+
+      <!--FIM HEADER-->
+
+
+      <!-- INICIO MAIN -->
+    <section id="home" class="main">
+      <div>
+        <h1>Olá, Seja bem vindo</h1>
+        <p>Crie soluções para seu negócio!</p>
+
+        <a href="#projetos">
+          <button class="call-to-action">Veja meus projetos 👇</button>
+        </a>
+              
+      </div>
+    </section>
+      <!-- FIM MAIN -->
+
+
+      <!--INICIO SOBRE-->
+    <section id="sobre" class="about">
+      <div>
+        <h2>Sobre</h2>
+
+        <p>
+          Sou um estudante apaixonado por tecnologia e inovação, atualmente cursando o 3º ano do Ensino Médio com foco em Tecnologia da Informação. Desde cedo, demonstro grande interesse pela área de desenvolvimento web e programação, buscando constantemente aprender novas linguagens e ferramentas que possam expandir meus conhecimentos e habilidades técnicas.
+          <br><br>
+          No meu percurso acadêmico, tenho me dedicado ao desenvolvimento de projetos práticos que unem teoria e aplicação, como este portfólio interativo e outros trabalhos que demonstram minha evolução na programação front-end. Acredito que a tecnologia é uma ferramenta poderosa para resolver problemas e criar soluções inovadoras que impactam positivamente a sociedade.
+          <br><br>
+          Meu objetivo é continuar me desenvolvendo profissionalmente na área de T.I., aprofundando meus conhecimentos em desenvolvimento de software, inteligência artificial e outras tecnologias emergentes. Busco oportunidades que me permitam crescer academicamente e profissionalmente, contribuindo com minha criatividade, capacidade de aprendizado rápido e visão inovadora.
+        </p>
+      
+    </div>
+    <img src="imagens/trabalhando.png" alt="Foto minha">
+    </section>      
+      <!--FIM SOBRE-->
+
+
+    <!-- INICIO PROJETOS -->
+    <section id="projetos" class="projects">
+      <h2>Meus Projetos por Área</h2>
+      <p class="fst-italic">Clique em cada área para ver meus trabalhos</p>
+
+      <div class="project-list">
+        <img src="imagens/banner-L.png" alt="Linguagens" onclick="openModal('linguagens')" style="cursor: pointer;">
+        <img src="imagens/banner-M.png" alt="Matemática" onclick="openModal('matematica')" style="cursor: pointer;">
+        <img src="imagens/bannerCN.png" alt="Ciências da Natureza" onclick="openModal('cn')" style="cursor: pointer;">
+        <img src="imagens/bannerCH.png" alt="Ciências Humanas" onclick="openModal('ch')" style="cursor: pointer;">
+        <img src="imagens/banner-T.I.png" alt="T.I." onclick="openModal('ftp')" style="cursor: pointer;">
+      </div>
+
+      <a href="formulario.html"><button type="button" class="action">Faça um orçamento</button></a>
+    </section>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <p class="modal-description" id="modalDescription"></p>
+            
+            
+            <div class="modal-tech">
+                <h4>Competências Desenvolvidas</h4>
+                <p id="modalCompetences"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIM PROJETOS -->
+
+
+      <!-- INICIO RODAPE -->
+    <footer>
+      <h3>
+        <a href="curriculo.html">Gustavo de Almeida Veronesi</a>
+      </h3>
+      <p></p>
+    </footer>
+      <!-- FIM RODAPE -->
+    
+    <script>
+    // Dados dos projetos por área
+    const projectsData = {
+      linguagens:
+      {
+        title: "Linguagens - REVISTA TROVAR",
+        image: "imagens/projeto-linguagens.png",
+        description: "Este trabalho consistiu na criação da primeira edição da revista ''Trovar'', uma publicação multifacetada que explorou a interligação entre passado, presente e futuro através de diversas linguagens e expressões culturais. Desenvolvemos uma revista completa contendo seções de português com análise crítica de letras do rapper Oruam, reportagem investigativa sobre a dualidade dos jogos de apostas no Brasil (cassinos online versus jogo do bicho), entrevista com especialista, produção de textos autobiográficos em língua inglesa, estudo aprofundado sobre Machado de Assis e sua contribuição para a literatura brasileira, artigo sobre probióticos e saúde, além de uma extensa pesquisa sobre artes medievais abrangendo arte indígena, românica, bizantina, gótica, sacra, canto gregoriano, teatro medieval, danças folclóricas e farsas. A publicação integrou diferentes linguagens artísticas e culturais, promovendo uma reflexão sobre identidade, memória coletiva e transformações sociais.",
+        competences: "Análise textual e interpretação de letras musicais, Produção de conteúdo multimídia em formato de revista, Comunicação eficaz em língua portuguesa e inglesa, Pesquisa documental sobre temas históricos e culturais, Pensamento crítico sobre questões sociais contemporâneas, Criatividade na elaboração de infográficos e design editorial, Edição e revisão de textos jornalísticos e literários, Expressão escrita autobiográfica e narrativa pessoal, Análise comparativa de diferentes formas de arte, Contextualização histórica de manifestações artísticas, Argumentação e posicionamento crítico em debates sociais, Interpretação de contextos socioculturais, Produção de entrevistas e reportagens investigativas, Organização e estruturação de conteúdo editorial, Trabalho em equipe na divisão de tarefas (direção, redação, pesquisa, entrevistas), Adaptação de linguagem para diferentes públicos e finalidades."
+      },
+
+      matematica:
+      {
+        title: "Matemática - ANÁLISE ESTATÍSTICA COMPARATIVA",
+        image: "imagens/projeto-matematica.png",
+        description: "Este trabalho consistiu na coleta, organização e análise estatística de dados demográficos e sociais dos três países estudados (Suíça, China e Afeganistão), com foco na aplicação de conceitos matemáticos para compreensão de realidades sociopolíticas. Desenvolvemos uma metodologia quantitativa que envolveu a criação de planilhas estruturadas com indicadores específicos por país, calculando proporções, percentuais e relações entre diferentes variáveis sociais como etnia, gênero, acesso à educação, sexualidade e distribuição etária. Através da análise comparativa dos dados, foi possível estabelecer padrões matemáticos que evidenciaram as disparidades sociais entre os países, utilizando fórmulas e cálculos para transformar dados brutos em indicadores significativos que sustentaram as conclusões do projeto interdisciplinar.",
+        competences: "Análise estatística e interpretação de dados, Organização e estruturação de planilhas, Cálculo de proporções e percentuais, Metodologia de pesquisa quantitativa, Pensamento sistêmico e analítico, Comparação de indicadores multicritério, Interpretação de dados demográficos, Formulação e aplicação de fórmulas matemáticas, Coleta e tratamento de dados secundários, Análise comparativa entre conjuntos de dados, Raciocínio lógico-matemático, Processamento de informações estatísticas, Validação de fontes de dados, Representação quantitativa de realidades sociais, Critérios de ponderação e avaliação."
+      },
+
+      cn:
+      {
+        title: "Ciências da Natureza - ÁCIDOS CARBOXÍLICOSF",
+        image: "imagens/projeto-cn.png",
+        description: "Este trabalho consistiu na elaboração de uma apresentação educacional abrangente sobre ácidos carboxílicos, abordando desde os conceitos fundamentais da química orgânica até as aplicações práticas no cotidiano. Desenvolvemos um material completo que explora a estrutura molecular desses compostos, suas propriedades físico-químicas (como acidez, solubilidade e pontos de fusão/ebulição), a nomenclatura oficial segundo as regras da IUPAC, e exemplos concretos de aplicações industriais e domésticas. A apresentação foi estruturada de forma didática, incluindo exercícios práticos de identificação e nomeação de compostos, com um design visual atraente em esquema de cores amarelo e lilás para facilitar o aprendizado e a fixação do conteúdo.",
+        competences: "Método científico, Análise de fenômenos naturais, Pesquisa científica, Organização de informações complexas, Pensamento sistêmico, Investigação experimental, Análise química, Comunicação técnica, Trabalho em equipe, Aplicação de normas técnicas (IUPAC), Criatividade visual, Relação teoria-prática, Síntese de informações, Apresentação de conteúdos científicos."
+      },
+
+      ch:
+      {
+        title: "Ciências Humanas - ESTUDO COMPARATIVO INTERNACIONAL",
+        image: "imagens/projeto-ch.png",
+        description: "Este trabalho consistiu em uma análise comparativa aprofundada entre três países - Suíça, China e Afeganistão - investigando como os marcadores sociais (gênero, etnia, sexualidade, idade e imigração) influenciam a qualidade de vida e o desenvolvimento humano em diferentes contextos sociopolíticos. Desenvolvemos uma metodologia própria com a criação de índices quantitativos para medir o nível de desenvolvimento social, combinando dados estatísticos oficiais com a elaboração de narrativas ficcionais que ilustraram as realidades vividas por diferentes grupos populacionais em cada país. A pesquisa envolveu coleta extensiva de dados demográficos, análise histórica comparada, estudo de políticas públicas e a construção de personagens com perfis sociais específicos, permitindo uma compreensão multidimensional sobre como fatores como etnia, gênero e orientação sexual impactam o acesso a direitos e oportunidades em sociedades com diferentes níveis de desenvolvimento econômico.",
+        competences: "Análise histórica comparada, Interpretação de contextos sociopolíticos, Pesquisa documental e estatística, Pensamento crítico sobre desenvolvimento humano, Análise de dados demográficos, Metodologia de pesquisa quantitativa e qualitativa, Produção de conteúdo narrativo ficcional, Comunicação eficaz de dados complexos, Criatividade na elaboração de personagens e histórias, Análise de políticas públicas, Estudo comparativo internacional, Interpretação de indicadores socioeconômicos, Contextualização histórica de realidades contemporâneas, Formulação de propostas de intervenção social, Trabalho em equipe multidisciplinar."
+      },
+
+      ftp:
+      {
+        title: "T.I. - SISTEMA DE GESTÃO FINANCEIRA",
+        image: "imagens/projeto-ti.png",
+        description: "Este projeto consistiu no desenvolvimento completo de um sistema de gestão financeira para pequenas empresas, simulando o ambiente de trabalho de uma startup de tecnologia. A empresa NexwareLabs foi contratada pela Canes Solutions para criar uma solução software que permitisse aos usuários definir orçamentos por categoria de gastos e comparar com os gastos reais, otimizando a gestão financeira empresarial. O sistema foi desenvolvido em Java utilizando NetBeans com Interface Gráfica (GUI), incorporando funcionalidades de CRUD (Create, Read, Update, Delete) para categorias orçamentárias, geração de sugestões financeiras inteligentes, visualização de dados através de gráficos, exportação de relatórios e análise comparativa entre orçado e realizado. O projeto seguiu metodologias ágeis Stage-Gate e atendeu aos Objetivos de Desenvolvimento Sustentável (ODS) 4 (Educação de Qualidade), 9 (Indústria, Inovação e Infraestrutura) e 11 (Cidades e Comunidades Sustentáveis).",
+        competences: "Programação orientada a objetos em Java, Desenvolvimento de interfaces gráficas (GUI), Modelagem de sistemas com UML, Elaboração de diagramas de classe e fluxogramas, Metodologias ágeis (Stage-Gate), Gestão de projetos com cronogramas, Prototipagem de baixa fidelidade, Documentação técnica seguindo normas ABNT, Trabalho em equipe colaborativo, Resolução de problemas complexos, Análise de requisitos de software, Implementação de operações CRUD, Design de identidade visual corporativa, Versionamento e controle de código, Teste e validação de sistemas, Apresentação de projetos técnicos, Gestão de orçamento e recursos, Pesquisa e seleção de tecnologias, Desenvolvimento de casos de uso."
+      }
+    };
+
+    function openModal(area) {
+      const project = projectsData[area];
+      const modal = document.getElementById('projectModal');
+        
+      document.getElementById('modalTitle').textContent = project.title;
+      document.getElementById('modalImage').src = project.image;
+      document.getElementById('modalImage').alt = project.title;
+      document.getElementById('modalDescription').textContent = project.description;
+      document.getElementById('modalCompetences').textContent = project.competences;
+        
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Previne scroll da página principal
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('projectModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restaura scroll
+    }
+
+    // Fechar modal clicando fora dele
+    window.onclick = function(event) {
+      const modal = document.getElementById('projectModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Fechar modal com tecla ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+    </script>
+  </body>
+</html>
