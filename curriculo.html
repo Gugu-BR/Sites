@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Curriculum Dev. Web</title>
+    <style>
+      /* Reset e variáveis de tema */
+      :root
+      {
+        --bg: #f4f7fb; --card:white; --text:#0f1724; --muted:#8e99adf1;
+        --accent:#0b74ff; --radius:12px; --shadow:0 8px 24px rgba(15,23,36,0.08);
+      }
+
+      html,body{ height:100%; margin:0; font-family: "Inter", "Poppins", Arial, sans-serif; background:linear-gradient(180deg,var(--bg),#eaf4ff 60%); color:var(--text); -webkit-font-smoothing:antialiased;}
+      .wrap{ max-width:980px; margin:28px auto; padding:16px;}
+
+      /* Inicio Header */
+      header.top
+      {
+        /* Aonde esta o botão de imprimir */
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        gap:10px;
+        background:var(--card);
+        padding:18px;
+        border-radius:var(--radius);
+        box-shadow:var(--shadow);
+        position:relative; /* permite posicionar .actions no canto superior direito */
+      }
+
+      /* Botão de imprimir */
+      .actions{
+        position:absolute;
+        top:12px;
+        right:12px;
+        display:flex;
+        gap:8px;
+      }
+
+      /* Contatos e linkedin na mesma linha */
+      .contact-list
+      {
+        display:flex;
+        gap:20px;
+        align-items:center;
+        justify-content:center;
+        color:#0f1724;
+        font-size:0.95rem;
+        margin:0;
+        padding:0;
+        list-style:none;
+      }
+      /* Fim Header */
+
+
+      /* Inicio Layout */
+      main
+      {
+        display:grid;
+        grid-template-columns: 1fr;
+        gap:18px; margin-top:18px;
+      }
+
+      section.card, aside.card
+      {
+        background:var(--card);
+        padding:16px; border-radius:12px;
+        box-shadow:var(--shadow);
+      }
+
+      h2.section-title
+      {
+        margin:0 0 10px 0;
+        color:var(--accent);
+        font-size:1.05rem;
+      }
+
+      p.summary
+      {
+        color:var(--muted);
+        margin-top:6px;
+      }
+
+      .detalhes
+      { 
+        display:none;
+        margin-top:8px; color:var(--muted);
+      }
+
+      /* Habilidades */
+      .skills
+      {
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px; margin-top:10px;
+      }
+
+      .skill-tag
+      {
+        background:linear-gradient(180deg,#f0f6ff,#eef6ff);
+        padding:8px 10px;
+        border-radius:999px;
+        font-weight:700;
+        color:var(--accent);
+      }
+
+      .margin-top-14 {
+          margin-top: 14px;
+      }
+  
+      .margin-top-18 {
+          margin-top: 18px;
+      }
+
+      /* Botões de detalhe e seção de certificados */
+      .detail-btn{ margin-top:8px; display:inline-block; }
+      .cert-section{
+        display:none;
+        margin-top:14px;
+        background:var(--card);
+        padding:12px;
+        border-radius:10px;
+        box-shadow:var(--shadow);
+        text-align:center;
+      }
+      .cert-section img{
+        max-width:100%;
+        height:auto;
+        border-radius:6px;
+        box-shadow:0 6px 16px rgba(2,6,23,0.06);
+      }
+    </style>
+  </head>
+
+<body>
+  <div class="wrap" id="root">
+    <header class="top" role="banner" aria-label="Cabeçalho do currículo">
+      <div class="head-info">
+        <h1 class="nome">Gustavo de Almeida Veronesi</h1>
+        <p class="cargo">Desenvolvedor(a) Front-end Júnior</p>
+
+        <ul class="contact-list" aria-label="contatos">
+          <li>✉️ <a href="mailto:gualmeidaveronesi@gmail.com">gualmeidaveronesi@gmail.com</a></li>
+          <li>📞 (11) 97760-6312</li>
+          <li>🔗 <a href="https://www.linkedin.com/in/gustavo-de-almeida-veronesi-247b97390/" id="linkedin">linkedin</a></li>
+        </ul>
+      </div>
+
+      <div class="actions" role="toolbar" aria-label="Ações do currículo">
+        <a class="btn hide-print" id="homeBtn" href="index.html" title="Home — Voltar à página inicial" aria-label="Voltar para a página inicial">🏠 Home</a>
+        <button class="btn hide-print" id="printBtn" title="Imprimir / Salvar como PDF">🖨️ Imprimir</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="perfil-title">
+        <h2 id="perfil-title" class="section-title">Perfil Profissional</h2>
+        <p class="summary">Profissional em início de carreira com interesse em desenvolvimento web, focado em criar experiências de usuário interativas e responsivas. Experiência com HTML, CSS, JavaScript e boas práticas de acessibilidade.</p>
+        <br>
+
+        <h2 class="section-title margin-top-14">Experiência Profissional</h2>
+        <article class="exp-item" aria-labelledby="exp1-title">
+          <h3 id="exp1-title">Estagiário em Desenvolvimento Web</h3>
+          <div class="summary">Empresa Incrível • Jan 2024 - Presente</div>
+          <p class="summary">Atuação em projetos front-end, suporte à equipe de design e implementação de páginas responsivas.</p>
+          <button class="btn detail-btn" data-target="det1" aria-controls="det1" aria-expanded="false">Mais sobre</button>
+          <div id="det1" class="detalhes" role="region" aria-hidden="true">
+            <p>Desenvolvimento de interfaces com HTML semântico, CSS modular e JavaScript para interações. Participei da criação de componentes reutilizáveis, testes de usabilidade e integração com APIs REST.</p>
+            <p>Também realizei revisão de código, uso básico de React em componentes simples e controle de versão com Git.</p>
+          </div>
+        </article>
+        <br>
+ 
+        <article class="exp-item" aria-labelledby="exp2-title">
+          <h3 id="exp2-title">Freelancer — Projetos Web</h3>
+          <div class="summary">Mar 2023 - Dez 2023</div>
+          <p class="summary">Desenvolvimento de sites institucionais, integração com APIs e otimizações para mobile.</p>
+          <button class="btn detail-btn" data-target="det2" aria-controls="det2" aria-expanded="false">Mais sobre</button>
+          <div id="det2" class="detalhes" role="region" aria-hidden="true">
+            <p>Criação de sites responsivos com foco em SEO, carregamento rápido e compatibilidade entre navegadores. Realizei integrações com formulários, serviços de pagamento e APIs externas.</p>
+            <p>Entrega com documentação e orientações ao cliente sobre manutenção e boas práticas.</p>
+          </div>
+        </article>
+        <br><br>
+
+
+        <h2 class="section-title margin-top-14">Formação Acadêmica</h2>
+        <div>
+          <strong>Técnico em Desenvolvimento Web</strong>
+          <div class="summary">Instituição X — 2022</div>
+          <br>
+        </div>
+    </main>
+
+    <!-- Nova seção: Habilidades Técnicas -->
+    <section class="card margin-top-18" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">Habilidades Técnicas</h2>
+      <div class="skills" aria-hidden="false">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Design Responsivo</span>
+        <span class="skill-tag">Power BI</span>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Seleciona elementos importantes
+    const printBtn = document.getElementById('printBtn');
+
+    
+
+    // Imprime o currículo — usa API nativa do navegador
+    function printCV(){ window.print();}
+
+    // Inicialização: conecta handlers
+    (function init()
+    {
+      if (printBtn) printBtn.addEventListener('click', printCV);
+
+      // Deixar detalhes inicialmente escondidos com atributos ARIA corretos
+      document.querySelectorAll('.detalhes').forEach(d => { d.style.display = 'none'; d.setAttribute('aria-hidden','true'); });
+    })();
+
+    // Função para alternar detalhes (usada pelos botões "Mais sobre")
+    function toggleDetails(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      const isHidden = el.getAttribute('aria-hidden') === 'true' || getComputedStyle(el).display === 'none';
+      el.style.display = isHidden ? 'block' : 'none';
+      el.setAttribute('aria-hidden', String(!isHidden));
+      // atualiza aria-expanded do botão associado
+      const btn = document.querySelector('[data-target="'+id+'"]');
+      if(btn) btn.setAttribute('aria-expanded', String(isHidden));
+    }
+
+
+    // registra listeners para botões dinamicamente
+    (function registerDetailButtons(){
+      document.querySelectorAll('button[data-target]').forEach(btn => {
+        const target = btn.getAttribute('data-target');
+        btn.addEventListener('click', (e)=> { e.preventDefault(); toggleDetails(target); });
+      });
+    })();
+  </script>
+</body>
+</html>
